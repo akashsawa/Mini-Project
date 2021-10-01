@@ -1,0 +1,103 @@
+
+<html lang=en xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+
+<head>
+
+
+
+</head>
+
+<body>
+	<section>
+		<style>
+.nav {
+	background-color: blue;
+	padding-left: 34px;
+	font-size: 21px;
+	color: white;
+}
+
+.container {
+	border: solid 5px;
+	width: 600px;
+	height: 603px;
+	padding: 10px 10px 10px 10px;
+}
+
+.alpha {
+	color: blue;
+	font-size: 17px;
+	height: 52px;
+	font-style: unset;
+}
+
+.bor {
+	background-color: whitesmoke;
+}
+
+#p1 {
+	text-align: center;
+	font-weight: bold;
+}
+
+.m1 {
+	text-align: end;
+}
+
+#p {
+	color: blue;
+}
+</style>
+		<form action="#" method="POST" enctype="multipart/form-data"
+			th:action="@{/user/process-contact}" th:object="${contact}">
+			<div class="container">
+				<h1 id="p1" align="center">add turf</h1>
+				<br>
+				<hr>
+				<table class="bor" width="550px">
+
+					<tr>
+						<td class="alpha" width="250px">Name <br> <input
+							type="text" placeholder="Enter name" name="name" id="firstname"
+							required autofocus>
+						</td>
+					<tr>
+						<td class="alpha">secondname <br> <input type="text"
+							placeholder="Enter second name" name="secondName" id="secondName"
+							required></td>
+					<tr>
+					<tr>
+						<td class="alpha">work <br> <input type="text"
+							placeholder="Enter work" name="work" id="work" required></td>
+					<tr>
+					<tr>
+						<td class="alpha">Email <br> <input type="email"
+							placeholder="Enter Email" name="email" id="email" required></td>
+					<tr>
+						<td class="alpha">Phone<br> <input type="tel"
+							placeholder="Enter phone" name="phone" id="phone" maxlength=10
+							required>
+						</td>
+					<tr>
+						<td class="alpha">description<br> <textarea row="500"
+								,cols="100" name="description" id="description" required> </textarea></td>
+					<tr>
+						<td class="alpha">Upload Profile Picture <br> <input
+							type="file" name="profileImage">
+						</td>
+				</table>
+
+
+				<div class="m1">
+					<button class="nav" type="submit">Create</button>
+				</div>
+
+			</div>
+
+		</form>
+
+	</section>
+</body>
+
+</html>

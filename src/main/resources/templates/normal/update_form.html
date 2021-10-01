@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang=en xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+
+		<style>
+.nav {
+	background-color: blue;
+	padding-left: 34px;
+	font-size: 21px;
+	color: white;
+}
+
+.container {
+	border: solid 5px;
+	width: 600px;
+	height: 620px;
+	padding: 10px 10px 10px 10px;
+}
+
+.alpha {
+	color: blue;
+	font-size: 17px;
+	height: 52px;
+	font-style: unset;
+}
+
+.bor {
+	background-color: whitesmoke;
+}
+
+#p1 {
+	text-align: center;
+	font-weight: bold;
+}
+
+.m1 {
+	text-align: end;
+}
+
+#p {
+	color: blue;
+}
+
+.my_profile_picture {
+	width: 35px;
+	height: 35px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+</style>
+		<form action="#" method="POST" enctype="multipart/form-data"
+			th:action="@{/user/process-update}" th:object="${contact}">
+			<div class="container">
+				<h1 id="p1" align="center">UPDATE TURF</h1>
+				<br>
+				<hr>
+				<table class="bor" width="550px">
+					<tr>
+						<td><input type="hidden" th:value="${contact.cid}" name="cid">
+						</td>
+
+						<tr>
+						<td class="alpha" width="250px">Name<tr>
+						<td class="alpha">secondname <br> <input
+							th:value="${contact.secondName}" type="text"
+							placeholder="Enter second name" name="secondName" id="secondName"
+							required></td>
+					
+					<tr>
+					
+					<tr>
+						<td class="alpha">work <br> <input
+							th:value="${contact.work}" type="text" placeholder="Enter work"
+							name="work" id="work" required></td>
+					
+					<tr>
+					
+					<tr>
+						<td class="alpha">Email <br> <input
+							th:value="${contact.email}" type="email"
+							placeholder="Enter Email" name="email" id="email" required></td>
+					
+					<tr>
+						<td class="alpha">Phone<br> <input
+							th:value="${contact.phone}" type="tel" placeholder="Enter phone"
+							name="phone" id="phone" maxlength=10 required>
+						</td>
+					
+					<tr>
+						<td class="alpha">description<br> <textarea
+								style="resize: none;" th:text="${contact.description}" row=30
+								,cols=90 name="description" id="description" required> </textarea></td>
+					
+					<tr>
+					
+		<!-- 				<td class="container text-center">
+							<img style="width: 250px; height: 250px;"
+								class="img-fluid my_profile_picture" src=""
+								th:src="@{'/img/'+${contact.image}}" alt="" />   -->
+					
+					
+
+						<td class="alpha">choose new picture<br> <input
+							type="file" name="profileImage">
+						</td>
+				
+				</table>
+
+
+				<div class="m1">
+					<button class="nav" type="submit">save turf</button>
+				</div>
+
+			</div>
+
+		</form>
+	</section>
+</body>
+</html>

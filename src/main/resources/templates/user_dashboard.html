@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org" >
+
+<head>
+
+</head>
+
+<body>
+	<h1>WELCOM USER</h1>
+	<H1>THIS IS YOUR PRIVATE DASHBOARD</H1>
+	<h1>USER NAME <span th:text="${user.name}"></span> </h1>
+	<h1>USER EMAIL <span th:text="${user.email}"></span> </h1>
+	<h3><a href="" th:href="@{/logout}">LOGOUT</a> </h3>
+	
+	
+</body>
+
+</html>

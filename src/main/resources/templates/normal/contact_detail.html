@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<div class="card mr-3 ml-3">
+			<div class="card-body">
+				<div class="container text-center">
+					<img src=" " style="height: 200px; width: 200px;"
+						class="my_profile_picture" th:src="@{'/img/'+${contact.image}}"
+						alt="profile photo">
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+</body>
+</html>

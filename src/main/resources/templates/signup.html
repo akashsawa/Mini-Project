@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+
+<html lang=en xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+
+<head>
+   
+</head>
+
+  <body>
+  <section>
+  
+  <style>
+   .p1{
+       border-style:solid;
+       border-color:black;
+       width:550px;
+       height:600px;
+       background-color:#282828;
+       color:white;
+      }
+   
+   .p2{
+      
+      font-size:20pt;
+      width:500px;
+      height:50px;
+      border-radius:50px;
+      
+      } 
+   .p3{
+       
+       height:320px;
+       width:500px;   
+      }
+     
+     .p4
+      {
+       color:#4CBB17;
+       text-decoration:underline;
+      } 
+
+     .p5{
+            text-align:left;
+        } 
+     .p6{
+         font-size:25pt;
+         background-color:#4CBB17;
+         color:white;
+         border-radius:70px;
+        }         
+     .p6{ text-align:right;}
+   </style>
+  
+  <form  action="" th:action="@{/do_register}" method="post" th:object="${user}">
+  
+  
+  	  <div th:if="${session.message}" th:classappend="${session.message.type}" >
+  	  	<p th:text="${session.message.content}"></p>
+  	  	<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+  	  	
+  	  </div>
+      <center>
+      <div class="p1">
+      <center> <h1>sign-up</h1> 
+      <hr width="2px">
+      <div class="p3">
+      <center>
+      <input class="p2" type="text" name="name" placeholder="First name"><br><br>
+      <input class="p2" type="email" name="email" placeholder="Email"><br><br>
+      <input class="p2" type="password" name="password" placeholder="Password"><br><br>
+      </div>    
+      <br>
+      <div class="p5">
+      <input type="checkbox" name="agreement"> I agree to the <a href="#"class="p4">Terms and Conditions</a> and <a href="#"class="p4">Privacy policy</a> 
+      </div>
+      <br>
+      <div align="right">
+         <button type="submit" size=20> submit </button>
+      </div>
+      </div>
+  </form>    
+      
+      </section>
+  </body>
+
+</html>
